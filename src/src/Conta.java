@@ -1,6 +1,7 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Conta {
 
@@ -102,9 +103,5 @@ public class Conta {
                 '}';
     }
 
-    public void sacar (double quantia){
-        this.saldo -= quantia;
-    }
-    public void depositar (double quantia) {this.saldo += quantia;}
 
 }

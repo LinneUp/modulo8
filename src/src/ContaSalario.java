@@ -21,10 +21,6 @@ public class ContaSalario extends Conta {
         return this.saldo;
     }
 
-    @Override
-    public void sacar(double quantia) {
-        this.saldo -= quantia;
-    }
 
     public String getEmpresa() {
         return empresa;

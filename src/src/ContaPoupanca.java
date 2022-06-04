@@ -34,11 +34,6 @@ public class ContaPoupanca extends Conta {
             return this.saldo;
     }
 
-    @Override
-    public void sacar(double quantia) {
-        this.saldo -= quantia;
-    }
-
 
     @Override
     public String toString() {

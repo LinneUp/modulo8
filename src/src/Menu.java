@@ -8,32 +8,19 @@ public class Menu extends Conta {
     public Menu(String nome, int numero, int agencia, String banco, double saldo, double sacar, double depositar) {
         super(nome, numero, agencia, banco, saldo, sacar, depositar);
     }
-    List<Conta> contas = new ArrayList<>();
-
-    class Banco {
-        List<Conta> contas = new ArrayList<>();
-
-        public List<Conta> getContas() {
-            return contas;
-        }
-
-        public void setContas(List<Conta> contas) {
-            this.contas = contas;
-        }
-
-
-
-    }
 
 
 
     public static void main(String[] args) throws Exception {
 
+             List<Conta> contas = new ArrayList<>();
+
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Banco");
         int option;
         do {
-            System.out.println("Digite qual Conta quer Criar: ");
+            System.out.println("Selecione a opção desejada: ");
             System.out.println(" 1 - Criar Conta ");
             System.out.println(" 2 - Depositar Valor ");
             System.out.println(" 3 - Sacar Valor ");
