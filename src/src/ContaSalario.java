@@ -9,19 +9,6 @@ public class ContaSalario extends Conta {
     private int salario;
 
 
-    public ContaSalario(double sacar,double depositar,String nome, int numero, int agencia, String banco, double saldo, int empresa, int salario) {
-        super(nome,numero, agencia, banco, saldo,sacar,depositar);
-        this.salario = salario;
-    }
-
-
-
-    @Override
-    public double getSaldo() {
-        return this.saldo;
-    }
-
-
     public String getEmpresa() {
         return empresa;
     }

@@ -15,13 +15,13 @@ public class Conta {
 
     public Conta() {
         String nome;
-         int numero;
-         int numero2;
-         int agencia;
-         String banco;
-         double saldo;
-         double sacar;
-         double depositar;
+        int numero;
+        int numero2;
+        int agencia;
+        String banco;
+        double saldo;
+        double sacar;
+        double depositar;
 
     }
 
@@ -58,8 +58,8 @@ public class Conta {
         this.banco = banco;
     }
 
-    public double getSaldo(){
-        return saldo+ getDepositar()+depositar;
+    public double getSaldo() {
+        return saldo + getDepositar() + depositar;
     }
 
     public void setSaldo(double saldo) {

@@ -4,17 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Menu extends Conta {
-    public Menu(String nome, int numero, int agencia, String banco, double saldo, double sacar, double depositar) {
-        super(nome, numero, agencia, banco, saldo, sacar, depositar);
-    }
-
-
+public class Menu {
+    Banco banco = new Banco();
+    Conta contas = new Conta();
 
     public static void main(String[] args) throws Exception {
-
-             List<Conta> contas = new ArrayList<>();
-
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Banco");
@@ -41,11 +35,16 @@ public class Menu extends Conta {
         switch (option) {
             case 1: {
                 Conta contas = new Conta();
+                Banco banco = new Banco();
+                ContaPoupanca contaPoupanca = new ContaPoupanca();
+
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println("Digite seu Nome");
                 String nome = scanner.next();
                 contas.setNome(nome);
+                banco.addNovaConta(contas);
+
 
                 System.out.println("Digite o numero da conta");
                 int numero = scanner.nextInt();
@@ -55,11 +54,16 @@ public class Menu extends Conta {
             }
             case 2: {
                 Conta contas = new Conta();
+                Banco banco = new Banco();
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println("Digite seu Nome");
                 String nome = scanner.next();
+                banco.addNovaConta(contas);
                 contas.setNome(nome);
+
+
+
 
                 System.out.println("Digite o numero da conta");
                 int numero = scanner.nextInt();
@@ -73,11 +77,13 @@ public class Menu extends Conta {
             }
             case 3: {
                 Conta contas = new Conta();
+                Banco banco = new Banco();
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println("Digite seu Nome");
                 String nome = scanner.next();
                 contas.setNome(nome);
+
 
                 System.out.println("Digite o numero da conta");
                 int numero = scanner.nextInt();
@@ -93,29 +99,31 @@ public class Menu extends Conta {
             }
 
             case 4: {
-                Conta contas = new Conta();
+                Conta conta = new Conta();
+                Banco banco = new Banco();
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println("Digite o numero da Conta que o dinheiro irá sair ");
                 int numero = scanner.nextInt();
-                contas.setSacar(numero);
+                conta.setSacar(numero);
+                banco.addNovaConta(conta);
 
                 System.out.println("Digite o numero da Conta que o dinheiro irá Entrar ");
                 int numero2 = scanner.nextInt();
-                contas.setDepositar(numero2);
+                conta.setDepositar(numero2);
 
                 System.out.println("Digite o Valor a ser transferido: ");
                 double depositar = scanner.nextDouble();
-                contas.setDepositar(depositar);
+                conta.setDepositar(depositar);
 
 
                 break;
             }
 
             case 5: {
-               Conta contas = new Conta();
-
-                System.out.println("O Valor de todas as Contas é: " + contas.getSaldo()+contas.getDepositar() );
+                Conta contas = new Conta();
+                Banco banco = new Banco();
+                System.out.println("O Valor de todas as Contas é: " + banco.getSaldoTotal() + contas.getSaldo());
 
                 break;
             }
