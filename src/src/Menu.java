@@ -157,7 +157,7 @@ public class Menu {
         }
     }
     public static void valores(){
-        System.out.println("o valor entre contas é : " );
+        System.out.println("o valor entre contas é : "+ contasBancarias.stream().mapToDouble(Conta::getSaldo).average().getAsDouble() );
 
     }
 
