@@ -5,8 +5,14 @@ import java.util.List;
 
 public class ContaSalario extends Conta {
 
+
+
     private String empresa;
     private int salario;
+
+    public ContaSalario( String pessoa) {
+        super( pessoa);
+    }
 
 
     public String getEmpresa() {

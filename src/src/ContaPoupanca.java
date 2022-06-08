@@ -4,16 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContaPoupanca extends Conta {
+
+
     private int diaAniversario;
     private double taxaDeJuros;
+    private double saldoP;
 
-    public double getSaldo(int dia) {
+    public ContaPoupanca( String pessoa) {
+        super(pessoa);
+    }
+
+    public double getSaldoP(int dia) {
         if (dia >= this.diaAniversario) {
 
-            this.saldo = this.saldo + this.taxaDeJuros * this.saldo;
-            return this.saldo;
+            this.saldoP =  this.saldoP + this.taxaDeJuros * this.saldoP;
+            return this.saldoP;
         } else
-            return this.saldo;
+            return this.saldoP;
     }
 
 
@@ -24,5 +31,6 @@ public class ContaPoupanca extends Conta {
                 ", taxaDeJuros=" + taxaDeJuros +
                 '}';
     }
+
 
 }

@@ -4,104 +4,74 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Conta {
+    private static int contadorDeContas = 1;
+    private int numeroConta;
+    private String pessoa;
+    private double saldo = 0.0;
 
-    private String nome;
-    private int numero;
-    private int agencia;
-    private String banco;
-    protected double saldo;
-    private double sacar;
-    private double depositar;
-
-    public Conta() {
-        String nome;
-        int numero;
-        int numero2;
-        int agencia;
-        String banco;
-        double saldo;
-        double sacar;
-        double depositar;
-
+    public Conta(String pessoa) {
+        this.numeroConta = contadorDeContas;
+        this.pessoa = pessoa;
+        contadorDeContas += 1;
     }
 
-
-    public int getNumero() {
-        return numero;
+    public int getNumeroConta() {
+        return numeroConta;
     }
 
-    public String getNome() {
-        return nome;
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public String getPessoa() {
+        return pessoa;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
-    }
-
-    public String getBanco() {
-        return banco;
-    }
-
-    public void setBanco(String banco) {
-        this.banco = banco;
+    public void setPessoa(String pessoa) {
+        this.pessoa = pessoa;
     }
 
     public double getSaldo() {
-        return saldo + getDepositar() + depositar;
+        return saldo;
     }
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 
-    public double getSacar() {
-        return sacar;
-    }
-
-    public void setSacar(double sacar) {
-        this.sacar = sacar;
-    }
-
-    public double getDepositar() {
-        return depositar;
-    }
-
-    public void setDepositar(double depositar) {
-        this.depositar = depositar;
-    }
-
-    public Conta(String nome, int numero, int agencia, String banco, double saldo, double sacar, double depositar) {
-        this.nome = nome;
-        this.numero = numero;
-        this.agencia = agencia;
-        this.banco = banco;
-        this.saldo = saldo;
-        this.sacar = sacar;
-        this.depositar = depositar;
-    }
-
     @Override
     public String toString() {
         return "Conta{" +
-                "nome='" + nome + '\'' +
-                ", numero=" + numero +
-                ", agencia=" + agencia +
-                ", banco='" + banco + '\'' +
+                "numeroConta=" + numeroConta +
+                ", pessoa='" + pessoa + '\'' +
                 ", saldo=" + saldo +
                 '}';
     }
+    public void depositar (double valor){
+        if (valor >0){
+            setSaldo(getSaldo() + valor);
+            System.out.println("Seu Deposito foi Concluido com Sucesso");
+        }else{
+            System.out.println("Nao foi possivel realizar o deposito" );
+        }
+    }
+    public void  sacar (double valor){
+        if (valor >0 && this.getSaldo()>= valor){
+            setSaldo(getSaldo()-valor);
+            System.out.println("Saque realizado com sucesso");
+        }else {
+            System.out.println("Não foi possivel realizar o saque ");
+        }
+    }
 
+    public void transferir(Conta contaParaDeposito, double valor){
+        if (valor>0 && this.getSaldo() >= valor){
+            setSaldo(getSaldo()- valor);
+            contaParaDeposito.saldo = contaParaDeposito.getSaldo() + valor;
+            System.out.println("Transferencia realizada com sucesso");
+        }else{
+            System.out.println("Não foi possivel realizar a transferencia!");
+        }
+    }
 
 }
