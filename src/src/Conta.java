@@ -6,10 +6,10 @@ import java.util.List;
 public class Conta {
     private static int contadorDeContas = 1;
     private int numeroConta;
-    private String pessoa;
+    private Pessoa pessoa;
     private double saldo = 0.0;
 
-    public Conta(String pessoa) {
+    public Conta(Pessoa pessoa) {
         this.numeroConta = contadorDeContas;
         this.pessoa = pessoa;
         contadorDeContas += 1;
@@ -23,11 +23,11 @@ public class Conta {
         this.numeroConta = numeroConta;
     }
 
-    public String getPessoa() {
+    public Pessoa getPessoa() {
         return pessoa;
     }
 
-    public void setPessoa(String pessoa) {
+    public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
 
@@ -41,11 +41,12 @@ public class Conta {
 
     @Override
     public String toString() {
-        return "Conta{" +
-                "numeroConta=" + numeroConta +
-                ", pessoa='" + pessoa + '\'' +
-                ", saldo=" + saldo +
-                '}';
+        return "\nNumero da Conta: " + this.getNumeroConta() +
+                "\nCliente: " + this.pessoa.getNome() +
+                "\nCPF: " + this.pessoa.getCpf() +
+                "\nEmail: " + this.pessoa.getEmail() +
+                ",\nSaldo=" + this.getSaldo() +
+                "\n" ;
     }
     public void depositar (double valor){
         if (valor >0){
@@ -72,6 +73,9 @@ public class Conta {
         }else{
             System.out.println("Não foi possivel realizar a transferencia!");
         }
+    }
+    public  void  valoresTotal(){
+        this.saldo = saldo;
     }
 
 }

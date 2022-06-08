@@ -10,7 +10,7 @@ public class ContaSalario extends Conta {
     private String empresa;
     private int salario;
 
-    public ContaSalario( String pessoa) {
+    public ContaSalario( Pessoa pessoa) {
         super( pessoa);
     }
 

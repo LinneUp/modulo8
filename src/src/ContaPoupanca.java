@@ -10,14 +10,14 @@ public class ContaPoupanca extends Conta {
     private double taxaDeJuros;
     private double saldoP;
 
-    public ContaPoupanca( String pessoa) {
+    public ContaPoupanca(Pessoa pessoa) {
         super(pessoa);
     }
 
     public double getSaldoP(int dia) {
         if (dia >= this.diaAniversario) {
 
-            this.saldoP =  this.saldoP + this.taxaDeJuros * this.saldoP;
+            this.saldoP = this.saldoP + this.taxaDeJuros * this.saldoP;
             return this.saldoP;
         } else
             return this.saldoP;

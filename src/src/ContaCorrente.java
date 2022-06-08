@@ -7,7 +7,7 @@ public class ContaCorrente extends Conta {
 
     private double chequeEspecial;
 
-    public ContaCorrente( String pessoa) {
+    public ContaCorrente( Pessoa pessoa) {
         super( pessoa);
     }
 
